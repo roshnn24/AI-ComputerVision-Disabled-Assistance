@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caretaker Dashboard</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+
+    <div class="container">
+        <h1>Caretaker Dashboard</h1>
+        <div class="dashboard">
+            <div class="section">
+                <h2 style="color: blue;">Patients Monitoring</h2>
+                <!-- Add a person's name and phone number here -->
+                <div class="profile">
+                    <h3>Shree pranav</h3>
+                    <p>Phone: 9234568275</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2 style="color: blue;">Reports and Logs</h2>
+                <div class="report">
+                    <h3>Medication Report</h3>
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Medication Name</th>
+                            <th>Dosage</th>
+                            <th>Session</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>2024-04-26</td>
+                            <td>Aspirin</td>
+                            <td>1 tablet</td>
+                            <td>Morning</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>2024-04-27</td>
+                            <td>Rosuvas</td>
+                            <td>2 tablets</td>
+                            <td>Afternoon</td>
+                            <td>Pending</td>
+                        </tr>
+                        <!-- Add more medication entries as needed -->
+                    </table>
+                </div>
+            </div>
+            <div class="section">
+                <h2 style="color: blue;">Recent Notifications</h2>
+                <div id="notifications">
+                    <ul class="notification-list">
+                        <li class="notification">Shree ate lunch...</li>
+                        <li class="notification">Pranav took tablet...</li>
+                        <li class="notification">John completed exercise....</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <a href="progressive_report" id="progressive-report-btn">
+                    View Progressive Report
+                </a>
+
+                <!-- Add placeholders for extracted text and model response -->
+
+                <h2>Model Response</h2>
+                <div id="modelResponse"></div>
+            </div>
+            <div class="section">
+                <h2 style="color: blue;">Uploaded File Details</h2>
+                <div id="fileDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <button id="uploadBillBtn">Upload Bill Image</button>
+    <input type="file" id="billImageInput" style="display: none;">
+
+    <script>
+        document.getElementById("progressive-report-btn").addEventListener("click", function() {
+            // Navigate to the new webpage programmatically
+            navigateToProgressiveReportPage();
+        });
+
+        function navigateToProgressiveReportPage() {
+            // Define the URL of the new webpage
+            var url = "progressive_report.html";
+
+            // Directly set the window location to the new URL
+            window.location.href = url;
+        }
+
+        document.getElementById("uploadBillBtn").addEventListener("click", function() {
+            // Trigger click on the file input
+            document.getElementById("billImageInput").click();
+        });
+
+        document.getElementById("billImageInput").addEventListener("change", function() {
+            // Handle the selected file
+            var selectedFile = this.files[0];
+            console.log("Selected file:", selectedFile);
+
+            // Create a FormData object to send the file to the server
+            var formData = new FormData();
+            formData.append("file", selectedFile);
+
+            // Send the file to the server using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/upload");
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    console.log("File uploaded successfully");
+                    // Update the extracted text and model response elements with the response from the server
+                    var response = JSON.parse(xhr.responseText);
+                    document.getElementById("modelResponse").innerText = response.model_response;
+                } else {
+                    console.error("File upload failed:", xhr.statusText);
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>
