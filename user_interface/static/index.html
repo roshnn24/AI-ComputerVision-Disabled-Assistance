@@ -1,0 +1,288 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User and Caretaker Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NeuroLingua</h1>
+        <div class="login-section">
+            <h2>User Login</h2>
+            <form id="userLoginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="login-section">
+            <h2>Caretaker Login</h2>
+            <form id="caretakerLoginForm">
+                <label for="caretakerUsername">Username:</label>
+                <input type="text" id="caretakerUsername" name="caretakerUsername" required>
+                <label for="caretakerPassword">Password:</label>
+                <input type="password" id="caretakerPassword" name="caretakerPassword" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>-->
+
+
+
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLingua - User and Caretaker Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <style>
+        body {
+            background-image: url("path/to/your/background-image.jpg"); /* Replace "path/to/your/background-image.jpg" with the actual path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif; /* Optional: Change the font family */
+        }
+    </style>
+    <div class="container">
+        <h1>NeuroLingua</h1>
+        <div class="login-section">
+            <h2>User Login</h2>
+            <form id="userLoginForm" action="{{ url_for('login') }}" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="login-section">
+            <h2>Caretaker Login</h2>
+            <form id="caretakerLoginForm" action="{{ url_for('login') }}" method="post">
+                <label for="caretakerUsername">Username:</label>
+                <input type="text" id="caretakerUsername" name="username" required>
+                <label for="caretakerPassword">Password:</label>
+                <input type="password" id="caretakerPassword" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>-->
+
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLingua - User and Caretaker Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url("https://t4.ftcdn.net/jpg/04/27/67/43/360_F_427674359_toOiDW4EeV50cUmZU2lErylklaiyku9U.jpg"); /* Replace "path/to/your/background-image.jpg" with the actual path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif; /* Optional: Change the font family */
+            margin: 0; /* Reset margin to remove default spacing */
+            padding: 0; /* Reset padding to remove default spacing */
+        }
+
+        /* Style for the container */
+        .container {
+            max-width: 400px;
+            margin: 100px auto; /* Center the container vertically and horizontally */
+            background-color: rgba(255, 255, 255, 0.7); /* Optional: Add a semi-transparent white background to the container */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Optional: Add border radius for rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Add box shadow for a subtle effect */
+        }
+
+        /* Style for the headings */
+        h1, h2 {
+            text-align: center;
+        }
+
+        /* Style for the forms */
+        form {
+            text-align: center;
+        }
+
+        /* Style for the labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Style for the input fields */
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+
+        /* Style for the buttons */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hover style for the buttons */
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NeuroLingua</h1>
+        <div class="login-section">
+            <h2>User Login</h2>
+            <form id="userLoginForm" action="{{ url_for('login') }}" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="login-section">
+            <h2>Caretaker Login</h2>
+            <form id="caretakerLoginForm" action="{{ url_for('login') }}" method="post">
+                <label for="caretakerUsername">Username:</label>
+                <input type="text" id="caretakerUsername" name="username" required>
+                <label for="caretakerPassword">Password:</label>
+                <input type="password" id="caretakerPassword" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLingua - User and Caretaker Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url("https://t4.ftcdn.net/jpg/04/27/67/43/360_F_427674359_toOiDW4EeV50cUmZU2lErylklaiyku9U.jpg"); /* Replace "path/to/your/background-image.jpg" with the actual path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif; /* Optional: Change the font family */
+            margin: 0; /* Reset margin to remove default spacing */
+            padding: 0; /* Reset padding to remove default spacing */
+        }
+
+        /* Style for the container */
+        .container {
+            max-width: 400px;
+            margin: 100px auto; /* Center the container vertically and horizontally */
+            background-color: rgba(255, 255, 255, 0.5); /* Reduce opacity to 0.5 */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Optional: Add border radius for rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Add box shadow for a subtle effect */
+        }
+
+        /* Style for the headings */
+        h1, h2 {
+            text-align: center;
+        }
+
+        /* Style for the forms */
+        form {
+            text-align: center;
+        }
+
+        /* Style for the labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Style for the input fields */
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+
+        /* Style for the buttons */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hover style for the buttons */
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NeuroLingua</h1>
+        <div class="login-section">
+            <h2>User Login</h2>
+            <form id="userLoginForm" action="{{ url_for('login') }}" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="login-section">
+            <h2>Caretaker Login</h2>
+            <form id="caretakerLoginForm" action="{{ url_for('login') }}" method="post">
+                <label for="caretakerUsername">Username:</label>
+                <input type="text" id="caretakerUsername" name="username" required>
+                <label for="caretakerPassword">Password:</label>
+                <input type="password" id="caretakerPassword" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
