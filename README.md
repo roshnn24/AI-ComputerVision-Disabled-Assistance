@@ -1,6 +1,6 @@
 # VisionAid - Empowering Vision-Disabled Individuals
 
-![VisionAid Logo](path/to/logo.png)
+![VisionAid Logo](create logo for 697a6bc4-dd58-49a7-aa9b-04ac823aa4ab.png)
 
 ## Overview
 
